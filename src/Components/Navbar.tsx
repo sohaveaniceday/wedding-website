@@ -1,5 +1,6 @@
 import React, { useState, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
+import { getClassName } from '@sohaveaniceday/component-library'
 
 type LinkProps = {
   name: string
@@ -9,12 +10,19 @@ type LinkProps = {
 type NavbarProps = {
   links?: LinkProps[]
   logo?: ReactNode
+  backgroundColor?: string
+  linkColor?: string
 }
 
-export const Navbar = ({ links, logo }: NavbarProps) => {
+export const Navbar = ({
+  links,
+  logo,
+  backgroundColor = 'blue',
+  linkColor = 'green',
+}: NavbarProps) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
   return (
-    <nav className='bg-gray-800'>
+    <nav style={{ backgroundColor }}>
       <div className='px-2 mx-auto max-w-7xl sm:px-6 lg:px-8'>
         <div className='relative flex items-center justify-between h-16'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
@@ -23,6 +31,7 @@ export const Navbar = ({ links, logo }: NavbarProps) => {
               aria-label='Main menu'
               aria-expanded='false'
               onClick={() => setNavbarOpen(!navbarOpen)}
+              style={{ backgroundColor: linkColor }}
             >
               <svg
                 className='block w-6 h-6'
@@ -53,7 +62,7 @@ export const Navbar = ({ links, logo }: NavbarProps) => {
             </button>
           </div>
           <div className='flex items-center justify-center flex-1 sm:items-stretch sm:justify-start'>
-            <div className='flex-shrink-0'>{logo}</div>
+            <div className='flex-shrink-0 my-auto'>{logo}</div>
             <div className='hidden sm:block sm:ml-6'>
               <div className='flex'>
                 {links &&
@@ -62,7 +71,8 @@ export const Navbar = ({ links, logo }: NavbarProps) => {
                       <Link
                         key={link.name}
                         to={link.path}
-                        className='px-3 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-gray-900 rounded-md focus:outline-none focus:text-white focus:bg-gray-700'
+                        style={{ backgroundColor: linkColor }}
+                        className='px-3 py-2 mr-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out rounded-md focus:outline-none focus:text-white focus:bg-gray-700'
                       >
                         {link.name}
                       </Link>
@@ -111,14 +121,31 @@ export const Navbar = ({ links, logo }: NavbarProps) => {
       </div>
       {navbarOpen && (
         <div className='sm:hidden'>
-          <div className='px-2 pt-2 pb-3'>
+          <div className='p-2'>
             {links &&
-              links.map((link) => {
+              links.map((link, index) => {
+                const isLast = links.length === index + 1
                 return (
                   <Link
                     key={link.name}
                     to={link.path}
-                    className='block px-3 py-2 text-base font-medium text-white transition duration-150 ease-in-out bg-gray-900 rounded-md focus:outline-none focus:text-white focus:bg-gray-700'
+                    className={getClassName([
+                      'block',
+                      'px-3',
+                      'py-2',
+                      [!isLast, 'mb-2'],
+                      'text-base',
+                      'font-medium',
+                      'text-white',
+                      'transition',
+                      'duration-150',
+                      'ease-in-out',
+                      'rounded-md',
+                      'focus:outline-none',
+                      'focus:text-white',
+                      'focus:bg-gray-700',
+                    ])}
+                    style={{ backgroundColor: linkColor }}
                   >
                     {link.name}
                   </Link>

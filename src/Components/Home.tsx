@@ -1,28 +1,24 @@
 import React from 'react'
 import { Navbar } from './Navbar'
-import { Router, Switch, Route } from 'react-router-dom'
-import { createBrowserHistory } from 'history'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 const Home = () => {
   const links = [
-    { name: 'RSVP', path: 'rsvp' },
-    { name: 'Contact', path: 'contact' },
+    { name: 'RSVP', path: '/rsvp' },
+    { name: 'Contact', path: '/contact' },
   ]
-  const customHistory = createBrowserHistory()
+
+  const Home = () => <>home</>
+  const Rsvp = () => <>rsvp</>
+  const Contact = () => <>contact</>
 
   return (
-    <Router history={customHistory}>
-      <Navbar links={links} logo='wedding' />
+    <Router>
+      <Navbar links={links} logo={<Link to=''>wedding</Link>} />
       <Switch>
-        <Route exact path='/'>
-          <div>home</div>
-        </Route>
-        <Route path='/rsvp'>
-          <div>rsvp</div>
-        </Route>
-        <Route path='/contact'>
-          <div>contact</div>
-        </Route>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/rsvp' component={Rsvp} />
+        <Route exact path='/contact' component={Contact} />
       </Switch>
     </Router>
   )
