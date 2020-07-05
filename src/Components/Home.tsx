@@ -14,7 +14,17 @@ const Home = () => {
 
   return (
     <Router>
-      <Navbar links={links} logo={<Link to=''>wedding</Link>} />
+      <Navbar
+        links={links}
+        logo={
+          <Link to=''>
+            <div className='flex flex-inline'>
+              Camp Ruci
+              <img className='px-2' src='/src/images/fireworks.png' />
+            </div>
+          </Link>
+        }
+      />
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/rsvp' component={Rsvp} />
