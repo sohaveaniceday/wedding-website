@@ -18,13 +18,14 @@ type NavbarProps = {
 export const Navbar = ({
   links,
   logo,
-  backgroundColor = 'blue',
-  linkColor = 'green',
+  backgroundColor = 'blue-700',
+  linkColor = 'green-700',
   rightOptions,
 }: NavbarProps) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
+
   return (
-    <nav className={`bg-${backgroundColor}-700`}>
+    <nav className={`bg-${backgroundColor}`}>
       <div className='px-2 mx-auto max-w-7xl sm:px-6 lg:px-8'>
         <div className='relative flex items-center justify-between h-16'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
@@ -34,17 +35,17 @@ export const Navbar = ({
                 'items-center',
                 'justify-center',
                 'p-2',
-                'text-gray-400',
+                'text-white',
                 'transition',
                 'duration-150',
                 'ease-in-out',
                 'rounded-md',
-                `bg-${linkColor}-700`,
-                'hover:text-white',
-                'hover:bg-gray-700',
+                `bg-${linkColor}`,
+                // 'hover:text-white',
+                // 'hover:bg-gray-700',
                 'focus:outline-none',
-                'focus:bg-gray-700',
-                'focus:text-white',
+                // 'focus:bg-gray-700',
+                // 'focus:text-white',
               ])}
               aria-label='Main menu'
               aria-expanded='false'
@@ -100,10 +101,10 @@ export const Navbar = ({
                           'duration-150',
                           'ease-in-out',
                           'rounded-md',
-                          `bg-${linkColor}-700`,
+                          `bg-${linkColor}`,
                           'focus:outline-none',
-                          'focus:text-white',
-                          'focus:bg-gray-700',
+                          // 'focus:text-white',
+                          // 'focus:bg-gray-700',
                         ])}
                       >
                         {link.name}
@@ -140,10 +141,10 @@ export const Navbar = ({
                       'duration-150',
                       'ease-in-out',
                       'rounded-md',
-                      `bg-${linkColor}-700`,
+                      `bg-${linkColor}`,
                       'focus:outline-none',
-                      'focus:text-white',
-                      'focus:bg-gray-700',
+                      // 'focus:text-white',
+                      // 'focus:bg-gray-700',
                     ])}
                   >
                     {link.name}

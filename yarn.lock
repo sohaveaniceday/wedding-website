@@ -1385,10 +1385,10 @@
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz#5405ee8e444ed212db44e79351f0c70a582aae25"
   integrity sha512-DetpxZw1fzPD5xUBrIAoplLChO2VB8DlL5Gg+I1IR9b2wPqYIca2WSUxL5g1vLeR4MsQq1NeWriXAVffV+U1Fw==
 
-"@sohaveaniceday/component-library@0.7.0":
-  version "0.7.0"
-  resolved "https://npm.pkg.github.com/download/@sohaveaniceday/component-library/0.7.0/b8358b2a3a4207f3250dd2f9bd73db2f5ca9ff65e47b8f109f49fbc0e9ab2e42#90708bde1ab2852a1d7c91f2ccca01fb3a68c8f7"
-  integrity sha512-VqRIgIbs1PrrB+q/cfIOYI+o98Rr28o3EXY5k9YZqQIzqe0mG2GUDEmtXZLapWz7rjY4rwyjH7uSNgqmmtK1qg==
+"@sohaveaniceday/component-library@0.9.0":
+  version "0.9.0"
+  resolved "https://npm.pkg.github.com/download/@sohaveaniceday/component-library/0.9.0/272bb1186e04e1811c063ebe26653b084493a5730e8e0b55b2cdf2688f78c629#9b746b502548a2d3d65ddf801996b3378d8c9102"
+  integrity sha512-23oYOG7iE0Zu9ONSJPxbZ1yhVoZcQB3VT63Bj9CB3sv22rtVg1A7y/DvviE3MQH2nhM+rzWaAGrbi96bnMge2Q==
   dependencies:
     axios "^0.19.2"
     global "^4.4.0"
