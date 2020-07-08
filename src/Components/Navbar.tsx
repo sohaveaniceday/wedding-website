@@ -25,7 +25,7 @@ export const Navbar = ({
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
-    <nav className={`bg-${backgroundColor}`}>
+    <nav className={`bg-${backgroundColor} sticky w-full top-0`}>
       <div className='px-2 mx-auto max-w-7xl sm:px-6 lg:px-8'>
         <div className='relative flex items-center justify-between h-16'>
           <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>

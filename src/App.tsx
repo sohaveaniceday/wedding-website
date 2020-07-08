@@ -1,8 +1,8 @@
 import React from 'react'
-import { Home } from './Components'
+import { Routes } from './Components'
 
 function App() {
-  return <Home />
+  return <Routes />
 }
 
 export default App
