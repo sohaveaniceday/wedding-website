@@ -8,7 +8,10 @@ import { Home } from './Home'
 export const Routes = () => {
   const links = [
     { name: 'RSVP', path: '/rsvp' },
-    { name: 'Contact', path: '/contact' },
+    {
+      name: 'Contact',
+      path: '/contact',
+    },
   ]
 
   const Rsvp = () => <>rsvp</>
@@ -21,7 +24,8 @@ export const Routes = () => {
         <Navbar
           links={links}
           backgroundColor='orange-200'
-          linkColor='orange-700'
+          linkColor='orange-500'
+          linkHoverColor='orange-700'
           logo={
             <Link to=''>
               <div className='flex flex-inline'>
@@ -36,11 +40,12 @@ export const Routes = () => {
               className={getClassName([
                 'text-white',
                 'rounded-full',
-                'bg-orange-700',
+                'bg-orange-500',
                 'focus:outline-none',
                 'h-10',
                 'w-10',
                 'flex',
+                'hover:bg-orange-700',
                 'justifty-center',
               ])}
             >

@@ -1,11 +1,25 @@
 import React from 'react'
 import CampImage from '../images/camp.png'
+import { Button } from '@sohaveaniceday/component-library'
 
 export const Home = () => (
   <div className='flex flex-col'>
     <div className='mx-auto'>
       <img src={CampImage} alt='camp' className='h-32 mx-auto my-4' />
       <div className='text-center'>Welcome!</div>
+      <Button
+        value='hello'
+        color='green-700'
+        cssClasses={[
+          'transition',
+          'duration-500',
+          'ease-in-out',
+          'hover:bg-red-500',
+          'transform',
+          'hover:-translate-x-full',
+          // 'hover:scale-110',
+        ]}
+      />
       <div className='text-center'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mi leo,
         facilisis at lorem nec, dapibus mattis ipsum. Donec sit amet risus
