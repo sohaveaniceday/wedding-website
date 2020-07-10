@@ -1364,10 +1364,10 @@
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz#5405ee8e444ed212db44e79351f0c70a582aae25"
   integrity sha512-DetpxZw1fzPD5xUBrIAoplLChO2VB8DlL5Gg+I1IR9b2wPqYIca2WSUxL5g1vLeR4MsQq1NeWriXAVffV+U1Fw==
 
-"@sohaveaniceday/component-library@0.10.0":
-  version "0.10.0"
-  resolved "https://npm.pkg.github.com/download/@sohaveaniceday/component-library/0.10.0/145b7b5b404c0256fed8eae700ea1dd956c3b56d6c6e62b7c5c2a7a0ea3a16cd#0961c7b333e5a586912bce2100fcefbe67f72e86"
-  integrity sha512-WeglxJZdV4nxpnBY0swsu5ifBrjnG9CHUp2rwkcW3iKjJj/tFXYPaJgkF9YhWDgXamlm1WAuv2UwYDzoKGx3Lg==
+"@sohaveaniceday/component-library@0.11.1":
+  version "0.11.1"
+  resolved "https://npm.pkg.github.com/download/@sohaveaniceday/component-library/0.11.1/d63b0af1b4bba001b271b85e7d88cc48fa76c9054e01589ff662dfbd07305e7a#d98a077c085ef77f5c85fcfdb6cab69799335627"
+  integrity sha512-Zs/9rwuAP2E1rjsJatLoUeSxcT+DEvnfFpTrPleudnbvS3FCmxPmMrDs2USQ+ZBVaueIh845RS9AbG4mMms2ww==
   dependencies:
     "@tailwindcss/ui" "^0.3.0"
     axios "^0.19.2"

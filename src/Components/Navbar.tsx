@@ -1,6 +1,6 @@
-import React, { useState, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { getClassName, Transition } from '@sohaveaniceday/component-library'
+import { getClassName, useBoolean } from '@sohaveaniceday/component-library'
 
 type LinkProps = {
   name: string
@@ -24,12 +24,12 @@ export const Navbar = ({
   linkHoverColor = 'green-700',
   rightOptions,
 }: NavbarProps) => {
-  const [navbarOpen, setNavbarOpen] = useState(false)
+  const [navbarOpen, { toggle: toggleNavbarOpen }] = useBoolean(false)
 
   return (
     <nav className={`sticky w-full top-0 z-40`}>
       <div className={`bg-${backgroundColor} relative z-40`}>
-        <div className='px-2 mx-auto max-w-7xl sm:px-6 lg:px-8'>
+        <div className='px-2 mx-auto sm:px-6'>
           <div className='relative flex items-center justify-between h-16'>
             <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
               <button
@@ -52,7 +52,7 @@ export const Navbar = ({
                 ])}
                 aria-label='Main menu'
                 aria-expanded='false'
-                onClick={() => setNavbarOpen(!navbarOpen)}
+                onClick={() => toggleNavbarOpen()}
               >
                 <svg
                   className='block w-6 h-6'
