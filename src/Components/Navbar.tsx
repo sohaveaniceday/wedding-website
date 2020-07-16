@@ -27,7 +27,7 @@ export const Navbar = ({
   const [navbarOpen, { toggle: toggleNavbarOpen }] = useBoolean(false)
 
   return (
-    <nav className={`sticky w-full top-0 z-40`}>
+    <nav className={`sticky w-full top-0 z-20`}>
       <div className={`bg-${backgroundColor} relative z-40`}>
         <div className='px-2 mx-auto sm:px-6'>
           <div className='relative flex items-center justify-between h-16'>
@@ -144,7 +144,7 @@ export const Navbar = ({
           [navbarOpen, ['-translate-y-0'], ['-translate-y-full']],
         ])}
       >
-        <div className='p-2'>
+        <div className='p-3'>
           {links &&
             links.map((link, index) => {
               const isLast = links.length === index + 1

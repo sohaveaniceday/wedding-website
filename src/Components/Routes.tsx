@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Navbar } from './Navbar'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import CampImage from '../images/camp.png'
-import { getClassName, Icon } from '@sohaveaniceday/component-library'
+import {
+  getClassName,
+  Icon,
+  Transition,
+  Button,
+} from '@sohaveaniceday/component-library'
 import { Home } from './Home'
+import BushImage from '../images/bush.png'
+import { colorScheme } from '../static'
 
 export const Routes = () => {
+  const [showIntro, setShowIntro] = useState(true)
   const links = [
     { name: 'RSVP', path: '/rsvp' },
     {
@@ -20,12 +28,55 @@ export const Routes = () => {
 
   return (
     <Router>
-      <div className='h-full min-h-screen bg-orange-100'>
+      <div
+        className={getClassName([
+          'h-full',
+          [showIntro, ['max-h-screen', 'overflow-hidden'], 'min-h-screen'],
+          'bg-orange-100',
+        ])}
+      >
+        <Transition show={showIntro}>
+          <div className='absolute z-30 w-full h-screen overflow-y-hidden'>
+            <div
+              className={getClassName([
+                'absolute',
+                'flex',
+                'inline-block',
+                'h-full',
+                'w-full',
+                'z-50',
+              ])}
+            >
+              <button
+                onClick={() => setShowIntro(false)}
+                className='m-auto bg-blue-200'
+              >
+                enter
+              </button>
+            </div>
+
+            <Transition
+              // enter='ease-out duration-300'
+              // enterFrom='opacity-0'
+              // enterTo='opacity-100'
+              leave='ease-in-out duration-1000'
+              leaveFrom='opacity-100'
+              leaveTo='opacity-0'
+            >
+              <img
+                src={BushImage}
+                alt='bush'
+                className='absolute z-40 object-cover h-full'
+                // style={{ width: '100%' }}
+              />
+            </Transition>
+          </div>
+        </Transition>
         <Navbar
           links={links}
           backgroundColor='orange-200'
-          linkColor='orange-500'
-          linkHoverColor='orange-700'
+          linkColor={colorScheme.medium}
+          linkHoverColor={colorScheme.darkLight}
           logo={
             <Link to=''>
               <div className='flex flex-inline'>
@@ -40,12 +91,12 @@ export const Routes = () => {
               className={getClassName([
                 'text-white',
                 'rounded-full',
-                'bg-orange-500',
+                `bg-${colorScheme.medium}`,
                 'focus:outline-none',
                 'h-10',
                 'w-10',
                 'flex',
-                'hover:bg-orange-700',
+                `hover:bg-${colorScheme.darkLight}`,
                 'justifty-center',
               ])}
             >
